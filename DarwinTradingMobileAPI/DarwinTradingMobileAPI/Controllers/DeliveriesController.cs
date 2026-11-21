@@ -180,7 +180,7 @@ public class DeliveriesController : ControllerBase
     }
 
     private bool HasAccess(string module)
-    {
+    {`
         var role =
             User.FindFirstValue(ClaimTypes.Role)
             ?? User.FindFirstValue("role")
