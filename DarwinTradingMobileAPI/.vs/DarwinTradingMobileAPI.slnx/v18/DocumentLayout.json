@@ -1,18 +1,86 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile-milestone1\\darwintradingmobileapi\\darwintradingmobileapi\\darwintradingmobileapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\darwintradingmobileapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\controllers\\deliveriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\controllers\\deliveriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile-milestone1\\darwintradingmobileapi\\darwintradingmobileapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\mobileaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\mobileaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\controllers\\livecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\controllers\\livecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\sessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\sessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\mobilesessioncleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\mobilesessioncleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\darwintradingmobileapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\darwintradingmobileapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\controllers\\databasetestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\controllers\\databasetestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile-milestone1\\darwintradingmobileapi\\darwintradingmobileapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|c:\\users\\alnae\\downloads\\darwintradingmobile\\darwintradingmobileapi\\darwintradingmobileapi\\darwintradingmobileapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{BAE5C88C-9C6C-2827-21C7-115ACA9F49AB}|DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj|solutionrelative:darwintradingmobileapi\\darwintradingmobileapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,8 +89,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 245,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 111,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,46 +98,269 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\WeatherForecast.cs",
-              "RelativeToolTip": "DarwinTradingMobileAPI\\WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "MobileAccess.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\MobileAccess.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\MobileAccess.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\MobileAccess.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\MobileAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T13:42:59.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-21T17:26:52.546Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Program.cs",
-              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Program.cs",
-              "RelativeToolTip": "DarwinTradingMobileAPI\\Program.cs",
+              "DocumentIndex": 5,
+              "Title": "LiveController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\LiveController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Controllers\\LiveController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\LiveController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Controllers\\LiveController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA7wB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T01:18:55.956Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-18T15:14:01.524Z"
+              "WhenOpened": "2026-11-21T01:05:41.933Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MobileSessionCleaner.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\MobileSessionCleaner.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\MobileSessionCleaner.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\MobileSessionCleaner.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\MobileSessionCleaner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T01:01:41.865Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SessionController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\SessionController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\SessionController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\SessionController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\SessionController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T00:55:28.082Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\SessionService.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\SessionService.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\SessionService.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAmwK8AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T00:53:10.713Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\ProductService.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\ProductService.cs",
+              "ViewState": "AgIAAFABAAAAAAAAAADwv3UBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T05:50:03.91Z",
+              "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DeliveriesController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\DeliveriesController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Controllers\\DeliveriesController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\DeliveriesController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Controllers\\DeliveriesController.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAUwLYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T04:20:43.657Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DarwinTradingMobileAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\DarwinTradingMobileAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-19T14:49:08.824Z",
+              "OwnerCaption": "DarwinTradingMobileAPI.csproj"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\PasswordHasher.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\PasswordHasher.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowCwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T16:00:04.291Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Program.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Program.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Program.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAADwv10AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T15:14:01.524Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DatabaseTestController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\DatabaseTestController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Controllers\\DatabaseTestController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\DatabaseTestController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Controllers\\DatabaseTestController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T15:19:44.038Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAUwLwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T20:10:01.48Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\AuthController.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\AuthController.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\AuthController.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\AuthController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAADwv3kAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T16:06:19.841Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Services\\AuthService.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T16:03:19.248Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-19T20:34:47.646Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "DarwinTradingMobileAPI.http",
-              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
               "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
-              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile-Milestone1\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
               "RelativeToolTip": "DarwinTradingMobileAPI\\DarwinTradingMobileAPI.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-11-18T15:13:48.371Z",
-              "EditorCaption": ""
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\WeatherForecast.cs",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T13:42:59.703Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\appsettings.Development.json",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-19T14:49:56.185Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "DarwinTradingMobileAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\alnae\\Downloads\\DarwinTradingMobile\\DarwinTradingMobileAPI\\DarwinTradingMobileAPI\\appsettings.json",
+              "RelativeToolTip": "DarwinTradingMobileAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-19T14:49:44.794Z",
+              "OwnerCaption": "%2"
             }
           ]
         },
         {
-          "DockedHeight": 18,
+          "DockedHeight": 152,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -91,6 +382,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }
