@@ -141,7 +141,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w800,
-                            color: Color(0xFF142D4E))),
+                            color: Color(0xFF181C20))),
                     if (p.measurement.isNotEmpty) ...[
                       const SizedBox(height: 2),
                       Text(p.measurement,
@@ -180,7 +180,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w800,
-                    color: Color(0xFF142D4E))),
+                    color: Color(0xFF181C20))),
             const SizedBox(height: 4),
             const Text('Latest 30 changes to this item',
                 style: TextStyle(fontSize: 12, color: Color(0xFF8290A0))),

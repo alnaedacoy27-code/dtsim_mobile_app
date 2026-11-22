@@ -9,7 +9,7 @@ import '../services/session_guard.dart';
 import '../services/live_sync.dart' show deliveriesChanged;
 import 'products_screen.dart' show formatMoney;
 
-const _ink = Color(0xFF142D4E);
+const _ink = Color(0xFF181C20);
 
 class DeliveryDetailScreen extends StatefulWidget {
   final int batchId;
@@ -119,6 +119,15 @@ class _DeliveryDetailScreenState extends State<DeliveryDetailScreen> {
       MaterialPageRoute(builder: (_) => const _ProductPickerPage()),
     );
     if (product == null || !mounted) return;
+
+    // Already in this batch? Open that line instead, like the desktop does, so
+    // picking the item again never replaces its quantity without showing it.
+    final already = _b?.items.where((i) => i.productId == product.id).firstOrNull;
+    if (already != null) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('This item is already in the batch. Update its line.')));
+      return _editItem(already);
+    }
 
     final saved = await showModalBottomSheet<bool>(
       context: context,
@@ -576,6 +585,11 @@ class _ItemSheet extends StatefulWidget {
 }
 
 class _ItemSheetState extends State<_ItemSheet> {
+  // The same limits as the desktop delivery screen.
+  static const _maxQty = 999999;
+  static const _maxPack = 100000;
+  static const _maxMoney = 9999999.99;
+
   final _qty = TextEditingController();
   final _pack = TextEditingController();
   final _cost = TextEditingController();
@@ -584,6 +598,11 @@ class _ItemSheetState extends State<_ItemSheet> {
   bool _byPack = false;
   bool _saving = false;
   LastPrice? _last;
+
+  /// Like the desktop: the cost is locked to what this supplier charged last
+  /// time, until the user says the supplier really changed its price.
+  bool _unlocked = false;
+  bool get _locked => _last != null && !_unlocked;
 
   @override
   void initState() {
@@ -613,6 +632,24 @@ class _ItemSheetState extends State<_ItemSheet> {
   String _num(double v) =>
       v == v.roundToDouble() ? v.toStringAsFixed(0) : v.toString();
 
+  // per-piece cost keeps up to 4 decimals (at least 2), like the desktop
+  static String _cost4(double v) {
+    var t = v.toStringAsFixed(4);
+    while (t.endsWith('0') && t.split('.')[1].length > 2) {
+      t = t.substring(0, t.length - 1);
+    }
+    final parts = t.split('.');
+    final whole = parts[0].replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'), (m) => ',');
+    return '₱$whole.${parts[1]}';
+  }
+
+  static String _describe(bool byPack, int pack, double entered, double perPiece) => byPack
+      ? '₱${formatMoney(entered)} per pack of $pack (${_cost4(perPiece)} per piece)'
+      : '${_cost4(perPiece)} per piece';
+
+  String _lastText(LastPrice l) =>
+      _describe(l.costMode == 'pack', l.packSize, l.enteredCost, l.costPrice);
+
   Future<void> _loadLastPrice() async {
     try {
       final data = await ApiService.getJson(
@@ -622,12 +659,16 @@ class _ItemSheetState extends State<_ItemSheet> {
       final last = LastPrice.fromJson(map);
       setState(() {
         _last = last;
-        if (widget.existing == null) {
+        final e = widget.existing;
+        if (e == null) {
           // Start from what this supplier charged last time.
           _byPack = last.costMode == 'pack';
-          if (_byPack && last.packSize > 1) _pack.text = '${last.packSize}';
+          _pack.text = _byPack && last.packSize > 1 ? '${last.packSize}' : '';
           _cost.text = _num(last.enteredCost);
           if (last.sellingPrice > 0) _price.text = _num(last.sellingPrice);
+        } else if ((e.costPrice - last.costPrice).abs() > 0.00005) {
+          // this line was already saved with a changed price
+          _unlocked = true;
         }
       });
     } catch (_) {
@@ -635,24 +676,68 @@ class _ItemSheetState extends State<_ItemSheet> {
     }
   }
 
+  Future<void> _unlock() async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text("Supplier's price changed?"),
+        content: const Text(
+            'Only unlock the cost if the supplier really changed its price. '
+            'The change is recorded in the audit trail with your name.'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+          FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Unlock cost')),
+        ],
+      ),
+    );
+    if (ok == true && mounted) setState(() => _unlocked = true);
+  }
+
   int get _q => int.tryParse(_qty.text) ?? 0;
   int get _k => _byPack ? (int.tryParse(_pack.text) ?? 0) : 1;
   double get _c => double.tryParse(_cost.text) ?? 0;
   double get _p => double.tryParse(_price.text) ?? 0;
 
+  // cost of ONE piece, rounded to 4 decimals like the server
+  double get _unit =>
+      _byPack && _k > 0 ? (_c / _k * 10000).roundToDouble() / 10000 : _c;
+
   String? _validate() {
-    if (_q <= 0) return 'Enter a quantity greater than zero.';
+    if (_q <= 0) {
+      return _byPack ? 'Enter the number of packs.' : 'Enter a quantity greater than zero.';
+    }
+    if (_q > _maxQty) return 'The quantity can be at most 999,999.';
     if (_byPack && _k < 2) return 'Enter how many pieces are in one pack (2 or more).';
-    if (_c <= 0) return 'Enter the cost.';
+    if (_byPack && _k > _maxPack) return 'A pack can hold at most 100,000 pieces.';
+    if (_c <= 0) return _byPack ? 'Enter the cost of one pack.' : 'Enter the cost of one piece.';
     if (_p <= 0) return 'Enter the selling price per piece.';
+    if (_c > _maxMoney || _p > _maxMoney) return 'Prices can be at most ₱9,999,999.99.';
+    if (_unit < 0.0001) return 'The cost per piece is too small. Check the pieces in 1 pack.';
     return null;
   }
 
-  Future<void> _save({bool confirmed = false}) async {
+  Future<void> _save({bool confirmed = false, bool lowPriceOk = false}) async {
     final problem = _validate();
     if (problem != null) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(problem)));
       return;
+    }
+
+    // Same check as the desktop: selling at or below cost needs a yes.
+    if (!lowPriceOk && _p <= _unit) {
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Price not above cost'),
+          content: Text('The selling price per piece (₱${formatMoney(_p)}) is not higher '
+              'than the cost per piece (${_cost4(_unit)}). Add it anyway?'),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+            FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Add anyway')),
+          ],
+        ),
+      );
+      if (ok != true || !mounted) return;
     }
 
     setState(() => _saving = true);
@@ -664,7 +749,7 @@ class _ItemSheetState extends State<_ItemSheet> {
         'packSize': _k,
         'enteredCost': _c,
         'price': _p,
-        'costChangeConfirmed': confirmed,
+        'costChangeConfirmed': confirmed || _unlocked,
       });
       if (mounted) Navigator.pop(context, true);
     } on SessionExpiredException {
@@ -677,6 +762,7 @@ class _ItemSheetState extends State<_ItemSheet> {
       setState(() => _saving = false);
 
       if (e.code == 'PRICE_LOCKED') {
+        // The supplier's price was recorded meanwhile (for example on the desktop).
         final last = _last;
         final ok = await showDialog<bool>(
           context: context,
@@ -685,8 +771,8 @@ class _ItemSheetState extends State<_ItemSheet> {
             content: Text(
               last == null
                   ? e.message
-                  : 'This supplier last charged ₱${formatMoney(last.costPrice)} per piece '
-                      '(${last.batchNo}). The cost you entered is different. Use the new cost?',
+                  : 'This supplier last charged ${_lastText(last)} (${last.batchNo}). '
+                      'The cost you entered is different. Use the new cost?',
             ),
             actions: [
               TextButton(
@@ -698,7 +784,7 @@ class _ItemSheetState extends State<_ItemSheet> {
             ],
           ),
         );
-        if (ok == true && mounted) _save(confirmed: true);
+        if (ok == true && mounted) _save(confirmed: true, lowPriceOk: true);
         return;
       }
 
@@ -715,18 +801,33 @@ class _ItemSheetState extends State<_ItemSheet> {
   @override
   Widget build(BuildContext context) {
     final pieces = _q * _k;
-    final lineCost = _byPack ? _q * _c : pieces * _c;
+    final lineCost =
+        ((_byPack ? _q * _c : pieces * _c) * 100).roundToDouble() / 100;
     final profit = pieces * _p - lineCost;
-    final showPreview = _q > 0 && _c > 0 && _p > 0 && _k > 0;
+    final margin = _p > 0 ? (_p - _unit) / _p * 100 : 0.0;
+    final showPreview =
+        _q > 0 && _c > 0 && _p > 0 && (!_byPack || _k >= 2);
+    final last = _last;
 
     final money = [
-      FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
-      LengthLimitingTextInputFormatter(10),
+      FilteringTextInputFormatter.allow(RegExp(r'^\d{0,7}(\.\d{0,2})?')),
     ];
     final digits = [
       FilteringTextInputFormatter.digitsOnly,
       LengthLimitingTextInputFormatter(6),
     ];
+
+    final String lockText;
+    if (last == null) {
+      lockText = 'First delivery of this item from this supplier: '
+          'enter its cost (per piece, or per pack / box).';
+    } else if (_locked) {
+      lockText = 'Cost is locked at ${_lastText(last)}: '
+          'what this supplier charged (${last.batchNo}).';
+    } else {
+      lockText = 'Cost unlocked. This supplier charged ${_lastText(last)} before. '
+          'A change is recorded in the audit trail.';
+    }
 
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(
@@ -738,21 +839,39 @@ class _ItemSheetState extends State<_ItemSheet> {
           Text(widget.title,
               style: const TextStyle(
                   fontSize: 18, fontWeight: FontWeight.w800, color: _ink)),
-          if (_last != null) ...[
-            const SizedBox(height: 6),
-            Text(
-              'Last from this supplier: ₱${formatMoney(_last!.costPrice)} per piece (${_last!.batchNo})',
-              style: const TextStyle(color: Color(0xFF718096), fontSize: 12),
+          const SizedBox(height: 8),
+          // cost lock note, worded like the desktop
+          Container(
+            padding: const EdgeInsets.fromLTRB(12, 10, 6, 10),
+            decoration: BoxDecoration(
+              color: _locked ? const Color(0xFFFFF6E5) : const Color(0xFFF2F5F8),
+              borderRadius: BorderRadius.circular(12),
             ),
-          ],
-          const SizedBox(height: 16),
+            child: Row(children: [
+              Icon(
+                  _locked
+                      ? Icons.lock_outline
+                      : (last == null ? Icons.info_outline : Icons.lock_open),
+                  size: 18,
+                  color: _locked ? const Color(0xFFB7791F) : const Color(0xFF718096)),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(lockText,
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF4A5568))),
+              ),
+              if (_locked)
+                TextButton(onPressed: _unlock, child: const Text('Price changed?')),
+            ]),
+          ),
+          const SizedBox(height: 14),
           SegmentedButton<bool>(
             segments: const [
               ButtonSegment(value: false, label: Text('Per piece')),
               ButtonSegment(value: true, label: Text('Per pack / box')),
             ],
             selected: {_byPack},
-            onSelectionChanged: (s) => setState(() => _byPack = s.first),
+            onSelectionChanged:
+                _locked ? null : (s) => setState(() => _byPack = s.first),
           ),
           const SizedBox(height: 14),
           TextField(
@@ -761,30 +880,36 @@ class _ItemSheetState extends State<_ItemSheet> {
             inputFormatters: digits,
             onChanged: (_) => setState(() {}),
             decoration: InputDecoration(
-                labelText: _byPack ? 'Number of packs' : 'Quantity (pieces)'),
+                labelText: _byPack ? 'Quantity (packs)' : 'Quantity (pieces)'),
           ),
           if (_byPack) ...[
             const SizedBox(height: 12),
             TextField(
               controller: _pack,
+              readOnly: _locked,
               keyboardType: TextInputType.number,
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly,
-                LengthLimitingTextInputFormatter(5),
+                LengthLimitingTextInputFormatter(6),
               ],
               onChanged: (_) => setState(() {}),
-              decoration: const InputDecoration(labelText: 'Pieces per pack'),
+              decoration: InputDecoration(
+                labelText: 'Pieces in 1 pack',
+                suffixIcon: _locked ? const Icon(Icons.lock_outline, size: 18) : null,
+              ),
             ),
           ],
           const SizedBox(height: 12),
           TextField(
             controller: _cost,
+            readOnly: _locked,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             inputFormatters: money,
             onChanged: (_) => setState(() {}),
             decoration: InputDecoration(
-              labelText: _byPack ? 'Cost per pack' : 'Cost per piece',
+              labelText: _byPack ? 'Cost price (per pack)' : 'Cost price (per piece)',
               prefixText: '₱ ',
+              suffixIcon: _locked ? const Icon(Icons.lock_outline, size: 18) : null,
             ),
           ),
           const SizedBox(height: 12),
@@ -803,13 +928,16 @@ class _ItemSheetState extends State<_ItemSheet> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFFEAF3FB),
+                color: const Color(0xFFFCF2F2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(children: [
-                _previewRow('Total pieces', '$pieces'),
+                _previewRow('Pieces into stock',
+                    _byPack ? '$_q × $_k = $pieces' : '$pieces'),
+                if (_byPack) _previewRow('Each piece costs', _cost4(_unit)),
                 _previewRow('Line cost', '₱${formatMoney(lineCost)}'),
-                _previewRow('Expected profit', '₱${formatMoney(profit)}'),
+                _previewRow('Expected profit',
+                    '₱${formatMoney(profit)}  (${margin.toStringAsFixed(1)}% margin)'),
               ]),
             ),
             if (profit < 0)
@@ -829,7 +957,7 @@ class _ItemSheetState extends State<_ItemSheet> {
                     child: CircularProgressIndicator(
                         strokeWidth: 2, color: Colors.white))
                 : const Icon(Icons.check),
-            label: Text(widget.existing == null ? 'Add to batch' : 'Save changes'),
+            label: Text(widget.existing == null ? 'Add to batch' : 'Update item'),
             style:
                 FilledButton.styleFrom(minimumSize: const Size.fromHeight(52)),
           ),
@@ -843,7 +971,7 @@ class _ItemSheetState extends State<_ItemSheet> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(label, style: const TextStyle(color: Color(0xFF34516D))),
+            Text(label, style: const TextStyle(color: Color(0xFF586068))),
             Text(value, style: const TextStyle(fontWeight: FontWeight.w700)),
           ],
         ),

@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<SupplierService>();
 builder.Services.AddSingleton<SessionService>();
 builder.Services.AddHostedService<DarwinTradingMobileAPI.MobileSessionCleaner>();
 builder.Services.AddOpenApi();

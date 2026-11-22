@@ -368,7 +368,7 @@ class _NewDraftSheetState extends State<_NewDraftSheet> {
               style: TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.w800,
-                  color: Color(0xFF142D4E))),
+                  color: Color(0xFF181C20))),
           const SizedBox(height: 4),
           const Text('Choose the supplier and the delivery date.',
               style: TextStyle(color: Color(0xFF718096), fontSize: 13)),

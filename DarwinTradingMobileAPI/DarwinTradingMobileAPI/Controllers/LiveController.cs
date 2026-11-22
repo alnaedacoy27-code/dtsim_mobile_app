@@ -41,7 +41,9 @@ public class LiveController : ControllerBase
                                   COALESCE(SUM(TO_DAYS(delivery_date)), 0))
                  FROM deliveries),
                 (SELECT CONCAT_WS('|', COUNT(*), COALESCE(SUM(qty), 0), COALESCE(SUM(cost_price), 0))
-                 FROM delivery_items)
+                 FROM delivery_items),
+                (SELECT CONCAT_WS('|', COUNT(*), COALESCE(MAX(updated_at), 0), COALESCE(MAX(id), 0))
+                 FROM suppliers)
             """, c);
 
         using var r = cmd.ExecuteReader();
@@ -50,7 +52,8 @@ public class LiveController : ControllerBase
         return Ok(new
         {
             products = Convert.ToString(r[0]) + "#" + Convert.ToString(r[1]),
-            deliveries = Convert.ToString(r[2]) + "#" + Convert.ToString(r[3])
+            deliveries = Convert.ToString(r[2]) + "#" + Convert.ToString(r[3]),
+            suppliers = Convert.ToString(r[4])
         });
     }
 }

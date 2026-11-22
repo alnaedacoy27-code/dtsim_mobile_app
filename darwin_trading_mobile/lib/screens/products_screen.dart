@@ -450,7 +450,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                 style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w800,
-                    color: Color(0xFF142D4E))),
+                    color: Color(0xFF181C20))),
             Text(_statusLabels[p.status] ?? '',
                 style: TextStyle(fontSize: 10, color: color)),
           ],

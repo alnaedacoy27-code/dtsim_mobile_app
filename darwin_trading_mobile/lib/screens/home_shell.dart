@@ -8,6 +8,7 @@ import 'dashboard_screen.dart';
 import 'deliveries_screen.dart';
 import 'products_screen.dart';
 import 'settings_screen.dart';
+import 'suppliers_screen.dart';
 
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
@@ -63,6 +64,19 @@ class _HomeShellState extends State<HomeShell> with WidgetsBindingObserver {
           icon: Icon(Icons.inventory_2_outlined),
           selectedIcon: Icon(Icons.inventory_2),
           label: 'Products',
+        ),
+      ));
+    }
+
+    // Suppliers: the desktop's "Suppliers" permission (File Maintenance)
+    if (permissions['suppliers'] == true) {
+      tabs.add(const _Tab(
+        'suppliers',
+        SuppliersScreen(),
+        NavigationDestination(
+          icon: Icon(Icons.storefront_outlined),
+          selectedIcon: Icon(Icons.storefront),
+          label: 'Suppliers',
         ),
       ));
     }

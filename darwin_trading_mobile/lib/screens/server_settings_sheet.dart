@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
-const _ink = Color(0xFF142D4E);
+const _ink = Color(0xFF181C20);
 
 /// Lets the user keep several server addresses (office Wi-Fi, Tailscale, ...),
 /// test each one, and choose which one the app uses.
@@ -193,7 +193,7 @@ class _ServerSettingsSheetState extends State<_ServerSettingsSheet> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(14),
         side: BorderSide(
-          color: active ? const Color(0xFF1769AA) : Colors.transparent,
+          color: active ? const Color(0xFF800000) : Colors.transparent,
           width: 1.5,
         ),
       ),
@@ -205,7 +205,7 @@ class _ServerSettingsSheetState extends State<_ServerSettingsSheet> {
             Row(children: [
               Icon(
                 active ? Icons.radio_button_checked : Icons.radio_button_off,
-                color: active ? const Color(0xFF1769AA) : const Color(0xFF9AA7B5),
+                color: active ? const Color(0xFF800000) : const Color(0xFF9AA7B5),
               ),
               const SizedBox(width: 10),
               Expanded(

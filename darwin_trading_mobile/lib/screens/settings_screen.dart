@@ -31,8 +31,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Card(
             child: ListTile(
               leading: const CircleAvatar(
-                  backgroundColor: Color(0xFFEAF3FB),
-                  child: Icon(Icons.person_outline, color: Color(0xFF1769AA))),
+                  backgroundColor: Color(0xFFFCF2F2),
+                  child: Icon(Icons.person_outline, color: Color(0xFF800000))),
               title: Text(LocalStore.displayName,
                   style: const TextStyle(fontWeight: FontWeight.w700)),
               subtitle: Text([
@@ -46,11 +46,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.w800,
                   fontSize: 17,
-                  color: Color(0xFF142D4E))),
+                  color: Color(0xFF181C20))),
           const SizedBox(height: 8),
           Card(
             child: ListTile(
-              leading: const Icon(Icons.dns_outlined, color: Color(0xFF1769AA)),
+              leading: const Icon(Icons.dns_outlined, color: Color(0xFF800000)),
               title: const Text('Connected to',
                   style: TextStyle(fontSize: 12, color: Color(0xFF718096))),
               subtitle: Text(ApiService.baseUrl,
@@ -73,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.w800,
                   fontSize: 17,
-                  color: Color(0xFF142D4E))),
+                  color: Color(0xFF181C20))),
           const SizedBox(height: 8),
           const Card(
               child: Padding(

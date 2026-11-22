@@ -20,6 +20,7 @@ public class SessionService
         ["dashboard"] = "Dashboard",
         ["delivery"] = "Deliveries",
         ["products"] = "Products",
+        ["suppliers"] = "Suppliers",
         ["settings"] = "Settings"
     };
 

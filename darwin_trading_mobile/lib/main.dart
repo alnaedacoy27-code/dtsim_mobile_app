@@ -17,10 +17,10 @@ Future<void> main() async {
 class DarwinTradingApp extends StatelessWidget {
   const DarwinTradingApp({super.key});
 
-  static const Color maroon = Color(0xFF741D35);
-  static const Color darkMaroon = Color(0xFF551326);
-  static const Color lightMaroon = Color(0xFFF8EEF1);
-  static const Color background = Color(0xFFF8F8FA);
+  static const Color maroon = Color(0xFF800000); // the desktop's maroon (Theme.Maroon)
+  static const Color darkMaroon = Color(0xFF600000);
+  static const Color lightMaroon = Color(0xFFFCF2F2);
+  static const Color background = Color(0xFFF7F7F8);
 
   @override
   Widget build(BuildContext context) {

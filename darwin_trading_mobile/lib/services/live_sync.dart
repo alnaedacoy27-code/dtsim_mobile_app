@@ -8,6 +8,9 @@ final ValueNotifier<int> productsChanged = ValueNotifier<int>(0);
 /// Bumped when delivery batches or their items change in the system.
 final ValueNotifier<int> deliveriesChanged = ValueNotifier<int>(0);
 
+/// Bumped when suppliers are added or edited (on the phone or the desktop).
+final ValueNotifier<int> suppliersChanged = ValueNotifier<int>(0);
+
 /// Asks the server every few seconds whether anything changed (for example
 /// something done on the desktop) and tells the screens to reload only then.
 class LiveSync {
@@ -16,6 +19,7 @@ class LiveSync {
   static Timer? _timer;
   static String? _products;
   static String? _deliveries;
+  static String? _suppliers;
   static bool _busy = false;
   static VoidCallback? _onSessionExpired;
 
@@ -38,6 +42,7 @@ class LiveSync {
     stop();
     _products = null;
     _deliveries = null;
+    _suppliers = null;
   }
 
   static Future<void> _poll() async {
@@ -47,12 +52,15 @@ class LiveSync {
       final data = await ApiService.getJson('/api/Live/stamp') as Map;
       final p = data['products']?.toString();
       final d = data['deliveries']?.toString();
+      final s = data['suppliers']?.toString();
 
       if (_products != null && p != _products) productsChanged.value++;
       if (_deliveries != null && d != _deliveries) deliveriesChanged.value++;
+      if (_suppliers != null && s != _suppliers) suppliersChanged.value++;
 
       _products = p;
       _deliveries = d;
+      _suppliers = s;
     } on SessionExpiredException {
       stop();
       _onSessionExpired?.call();
