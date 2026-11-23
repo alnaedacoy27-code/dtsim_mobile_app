@@ -29,6 +29,9 @@ class _SupplierFormScreenState extends State<SupplierFormScreen> {
   bool get _editing => widget.supplier != null;
 
   static final _titleRx = RegExp(r"^[\p{L}\p{N} .,#'/()&\-]+$", unicode: true);
+  // addresses also take + : ; (a Google Maps Plus Code such as G4J5+WV6, "Blk 3; Lot 5")
+  static final _addressRx = RegExp(r"^[\p{L}\p{N} .,#'/()&\-+:;]+$", unicode: true);
+  static const _maxAddress = 200;
   static final _personRx = RegExp(r"^[\p{L} '.\-]+$", unicode: true);
   static final _mobileRx = RegExp(r'^09\d{9}$');
   static final _emailRx = RegExp(
@@ -59,6 +62,26 @@ class _SupplierFormScreenState extends State<SupplierFormScreen> {
 
   static String _tidy(String s) => s.trim().replaceAll(RegExp(r'\s+'), ' ');
 
+  /// An address pasted from Google Maps or a message: line breaks become ", ", curly quotes and
+  /// long dashes become plain ones, spaces and commas are tidied. Same as the desktop and the API.
+  static String _tidyAddress(String s) {
+    var t = s
+        .replaceAll(RegExp(r'[\r\n\t]+'), ', ')
+        .replaceAll(RegExp('[‘’“”]'), "'")
+        .replaceAll(RegExp('[–—]'), '-')
+        .replaceAll(' ', ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(RegExp(r'\s*,[\s,]*'), ', ')
+        .trim();
+    while (t.startsWith(',')) {
+      t = t.substring(1).trim();
+    }
+    while (t.endsWith(',')) {
+      t = t.substring(0, t.length - 1).trim();
+    }
+    return t;
+  }
+
   String? _checkCompany(String? v) {
     final t = _tidy(v ?? '');
     if (t.isEmpty) return 'Enter the company name.';
@@ -86,10 +109,14 @@ class _SupplierFormScreenState extends State<SupplierFormScreen> {
 
   String? _checkAddress(String? v) {
     if (_addressError != null) return _addressError;
-    final t = _tidy(v ?? '');
+    final t = _tidyAddress(v ?? '');
     if (t.isEmpty) return 'Enter the address of this branch.';
     if (t.length < 2) return 'The address is too short.';
-    if (!_titleRx.hasMatch(t)) return "Letters, numbers and . , # ' / ( ) & - only.";
+    if (t.length > _maxAddress) return 'The address can be at most $_maxAddress characters (now ${t.length}).';
+    if (!_addressRx.hasMatch(t)) {
+      final bad = t.runes.map(String.fromCharCode).where((c) => !_addressRx.hasMatch(c)).toSet().join(' ');
+      return "These characters are not allowed: $bad";
+    }
     return null;
   }
 
@@ -113,7 +140,7 @@ class _SupplierFormScreenState extends State<SupplierFormScreen> {
         'companyName': _tidy(_company.text),
         'contactPerson': _tidy(_person.text),
         'contactNumber': _number.text.trim(),
-        'address': _tidy(_address.text),
+        'address': _tidyAddress(_address.text),
         'email': _email.text.trim().isEmpty ? null : _email.text.trim(),
       };
       final data = _editing
@@ -208,7 +235,7 @@ class _SupplierFormScreenState extends State<SupplierFormScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _address,
-              maxLength: 150,
+              maxLength: 255, // room for a pasted address; it is tidied, then checked against 200
               minLines: 2,
               maxLines: 3,
               textCapitalization: TextCapitalization.words,

@@ -46,13 +46,15 @@ public class SupplierService
     private static readonly Regex SpacesRx = new(@"\s+");
     // same characters as the desktop's InputRules (names of things / addresses / people)
     private static readonly Regex TitleRx = new(@"^[\p{L}\p{N} .,#'/()&\-]+$");
+    // addresses also take + : ; (a Google Maps Plus Code such as G4J5+WV6, "Blk 3; Lot 5")
+    private static readonly Regex AddressRx = new(@"^[\p{L}\p{N} .,#'/()&\-+:;]+$");
     private static readonly Regex PersonRx = new(@"^[\p{L} '.\-]+$");
     private static readonly Regex MobileRx = new(@"^09\d{9}$");
     private static readonly Regex EmailRx = new(
         @"^[A-Za-z0-9_%+\-]+(\.[A-Za-z0-9_%+\-]+)*@([A-Za-z0-9]([A-Za-z0-9\-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,24}$");
 
     public const int MaxName = 100;
-    public const int MaxAddress = 150;
+    public const int MaxAddress = 200;
     public const int MaxEmail = 100;
 
     public SupplierService(IConfiguration configuration)
@@ -237,7 +239,7 @@ public class SupplierService
         co = Tidy(company);
         pe = Tidy(person);
         nu = (number ?? "").Trim().Replace(" ", "").Replace("-", "");
-        ad = Tidy(address);
+        ad = TidyAddress(address);
         var e = (email ?? "").Trim();
         em = e.Length == 0 ? null : e;
 
@@ -256,8 +258,8 @@ public class SupplierService
 
         if (ad.Length == 0) return "Enter the company address.";
         if (ad.Length < 2 || ad.Length > MaxAddress) return "The address must be 2 to " + MaxAddress + " characters.";
-        if (!TitleRx.IsMatch(ad) || !ad.Any(char.IsLetterOrDigit))
-            return "The address can have letters, numbers and . , # ' / ( ) & - only.";
+        if (!AddressRx.IsMatch(ad) || !ad.Any(char.IsLetterOrDigit))
+            return "The address can have letters, numbers, spaces and . , # ' / ( ) & - + : ; only.";
 
         if (em != null)
         {
@@ -268,6 +270,19 @@ public class SupplierService
     }
 
     private static string Tidy(string? s) => SpacesRx.Replace((s ?? "").Trim(), " ");
+
+    // An address pasted from Google Maps or a message: line breaks become ", ", curly quotes and long
+    // dashes become plain ones, spaces and commas are tidied. Same as the desktop and the phone.
+    private static readonly Regex LineBreaksRx = new(@"[\r\n\t]+");
+    private static readonly Regex CommaRunRx = new(@"\s*,[\s,]*");
+    public static string TidyAddress(string? s)
+    {
+        var t = LineBreaksRx.Replace(s ?? "", ", ")
+            .Replace('‘', '\'').Replace('’', '\'').Replace('“', '\'').Replace('”', '\'')
+            .Replace('–', '-').Replace('—', '-').Replace(' ', ' ');
+        t = CommaRunRx.Replace(SpacesRx.Replace(t, " "), ", ");
+        return t.Trim().Trim(',').Trim();
+    }
 
     private static string EscapeLike(string s) =>
         s.Replace("\\", "\\\\").Replace("%", "\\%").Replace("_", "\\_");
