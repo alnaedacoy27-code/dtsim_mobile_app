@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarwinTradingMobileAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb38dcf5af77ea161d5922176a94a7426cd4faf0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deff4f745612e98a2bfdd910fb5c64c983e716c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarwinTradingMobileAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarwinTradingMobileAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

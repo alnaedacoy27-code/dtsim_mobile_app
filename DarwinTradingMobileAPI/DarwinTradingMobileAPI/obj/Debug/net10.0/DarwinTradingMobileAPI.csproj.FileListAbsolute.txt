@@ -93,7 +93,6 @@ C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradin
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\DarwinTradingMobileAPI.genruntimeconfig.cache
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\ref\DarwinTradingMobileAPI.dll
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\bin\Debug\net10.0\DarwinTradingMobileAPI.staticwebassets.runtime.json
-C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\bin\Debug\net10.0\DarwinTradingMobileAPI.runtimeconfig.dev.json
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.lib.module.js
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.js
@@ -106,3 +105,14 @@ C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradin
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\compressed\qejq5s8mfn-{0}-pckrra6wqp-pckrra6wqp.gz
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\compressed\r4vumd2wmg-{0}-v1vy2to33n-v1vy2to33n.gz
 C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\compressed\p72f8ospoh-{0}-ysew0n4kjn-ysew0n4kjn.gz
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\appsettings.Development.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\appsettings.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.staticwebassets.runtime.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.staticwebassets.endpoints.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.exe
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.deps.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.runtimeconfig.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.runtimeconfig.dev.json
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.dll
+C:\Users\alnae\AppData\Local\Temp\claude\mobileapi_build\DarwinTradingMobileAPI.pdb
+C:\Users\alnae\Downloads\DarwinTradingMobile\DarwinTradingMobileAPI\DarwinTradingMobileAPI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

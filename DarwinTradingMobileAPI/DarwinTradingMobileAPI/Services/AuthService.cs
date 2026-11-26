@@ -1,4 +1,4 @@
-
+﻿
 using MySqlConnector;
 using System.Data;
 
@@ -993,9 +993,6 @@ public class AuthService
         if (quantity <= 0 || enteredCost <= 0m || price <= 0m || (byPack && packSize < 2))
             return BatchResult.Invalid;
         if ((long)quantity * packSize > 2000000000L) return BatchResult.Invalid;
-        // the same limits as the desktop delivery screen
-        if (quantity > 999999 || packSize > 100000 || enteredCost > 9999999.99m || price > 9999999.99m)
-            return BatchResult.Invalid;
 
         int pieces = quantity * packSize;
         decimal unitCost = byPack

@@ -26,6 +26,9 @@ public class AuthController : ControllerBase
         _configuration = configuration;
     }
 
+    // Module keys that make up the mobile app.
+    private static readonly string[] MobileModules = { "dashboard", "delivery", "products" };
+
     public class LoginRequest
     {
         public string Username { get; set; } = "";
@@ -49,10 +52,10 @@ public class AuthController : ControllerBase
             result.UserId,
             result.Role);
 
-        // The user logged in correctly, but must be allowed to use the phone app:
-        // the "Mobile App" permission from Permission Maintenance, and at least one of
-        // the modules the app is built on (Products, Delivery Management).
-        bool hasMobileAccess = MobileAccess.CanUseApp(permissions, result.Role);
+        // The user logged in correctly, but must be allowed into at least
+        // one mobile module to use this application.
+        bool hasMobileAccess = MobileModules.Any(
+            module => permissions.TryGetValue(module, out var allowed) && allowed);
 
         if (!hasMobileAccess)
         {

@@ -190,9 +190,6 @@ public class DeliveriesController : ControllerBase
         if (userId <= 0) return false;
 
         var permissions = _service.GetPermissions(userId, role);
-        // The phone app permission is checked on every request too.
-        if (!MobileAccess.CanUseApp(permissions, role)) return false;
-
         return permissions.TryGetValue(module, out var allowed) && allowed;
     }
 }

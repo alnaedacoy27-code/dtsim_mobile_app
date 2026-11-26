@@ -180,10 +180,6 @@ public class ProductsController : ControllerBase
 
         var permissions = _service.GetPermissions(userId, role);
 
-        // The phone app permission is checked on every request too, so taking it away
-        // in Permission Maintenance stops a phone that is already signed in.
-        if (!MobileAccess.CanUseApp(permissions, role)) return false;
-
         return permissions.TryGetValue(module, out var allowed) && allowed;
     }
 }
